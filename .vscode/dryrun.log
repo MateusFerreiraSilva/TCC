@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/mateus/Repos/IC---Estudos-de-Algoritmos-e-Estruturas-de-Dados-Compactas-para-Grafos-Temporais'
+g++ -c -g ./src/bitarray.cpp
+mv bitarray.o ./resources
+make: Leaving directory '/home/mateus/Repos/IC---Estudos-de-Algoritmos-e-Estruturas-de-Dados-Compactas-para-Grafos-Temporais'
+ 
