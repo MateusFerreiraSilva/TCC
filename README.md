@@ -1,5 +1,7 @@
 Compile:
-bazel build src/main
+bazel build src/main/main --compilation_mode=dbg -s
+
+Debug Flags: --compilation_mode=dbg -s
 
 Run:
 bazel-bin/src/main
