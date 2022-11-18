@@ -11,9 +11,11 @@ using namespace std;
 
 class CompactSuffixArray {
     private:
+        string text;
         vector<uint> psi;
     public:
         CompactSuffixArray(string text);
+        uint sa_decode(uint x);
 };
 
 #endif
