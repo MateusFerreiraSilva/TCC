@@ -5,9 +5,10 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-vector<string> get_suffixes(string text);
+vector<uint> get_psi(string text);
 
 #endif

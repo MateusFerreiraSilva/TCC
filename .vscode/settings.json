@@ -1,6 +1,8 @@
 {
     "makefile.extensionOutputFolder": "./.vscode",
     "files.associations": {
+        "*.py": "python",
+        "*.sol": "solidity",
         "*.tcc": "cpp",
         "bitset": "cpp",
         "optional": "cpp",
@@ -12,6 +14,13 @@
         "regex": "cpp",
         "type_traits": "cpp",
         "valarray": "cpp",
-        "fstream": "cpp"
-    }
+        "fstream": "cpp",
+        "ostream": "cpp",
+        "vector": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }

@@ -1,14 +1,43 @@
 #include "utils.h"
 
-vector<string> get_suffixes(string text) {
-  auto suffixes = vector<string>();
-  
-  text += "$";
+class Comparator {
+  private:
+    string text;
+  public:
+    Comparator(string text) {
+      this->text = text;
+    }
 
-  for (auto i = 0; i < text.size(); i++) {
-    auto lenght = text.size() - i; 
-    suffixes.push_back(text.substr(i, lenght));
+    bool operator()(uint a, uint b) {
+      auto lenghtA = text.size() - a;
+      auto lenghtB = text.size() - b;
+
+      return text.substr(a, lenghtA) < text.substr(b, lenghtB);
+    }
+};
+
+vector<uint> get_psi(string text) {
+  auto suffixes = vector<uint>();
+
+  for (size_t i = 0; i < text.size(); i++) {
+    suffixes.push_back(i);
   }
 
-  return suffixes;
+  sort(suffixes.begin(), suffixes.end(), Comparator(text));
+
+  vector<uint> inverted_index_suffixes(suffixes.size());
+  vector<uint> psi(suffixes.size());
+  for (size_t i = 0; i < suffixes.size(); i++) {
+    inverted_index_suffixes[suffixes[i]] = i;
+  }
+
+  for (size_t i = 0; i < suffixes.size(); i++) {
+    if (suffixes[i] + 1 < (uint) suffixes.size()) {
+      psi[i] = inverted_index_suffixes[suffixes[i] + 1];
+    } else {
+      psi[i] = EOF;
+    }
+  }
+
+  return psi;
 }

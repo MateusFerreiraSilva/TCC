@@ -1,7 +1,7 @@
 #include "compact_suffix_array/compact_suffix_array.h"
 
 int main() {
-  string text = "batata";
+  string text = "happypuppy";
 
   CompactSuffixArray csa(text);
 
