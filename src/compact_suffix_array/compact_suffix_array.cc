@@ -7,7 +7,7 @@ CompactSuffixArray::CompactSuffixArray(string text) {
 
 uint CompactSuffixArray::sa_decode(uint x) {
   uint hops_to_end = 0;
-  while (psi[x] != EOF) {
+  while (psi[x] != (uint) EOF) {
     hops_to_end++;
     x = psi[x];
   }
